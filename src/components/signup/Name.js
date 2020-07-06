@@ -7,12 +7,17 @@ class Name extends Component {
     this.state = {
       first_name: '',
       last_name: '',
+      email: '',
       redirectToUserProfessionDataView: false
     };
     this.goToUserProfessionDataView = this.goToUserProfessionDataView.bind(this);
     this.onChange = this.onChange.bind(this);
   }
-  
+
+  componentWillMount() {
+    this.setState({email: this.props.location.state.email})
+  }
+
   goToUserProfessionDataView() {
     if (this.state.first_name && this.state.last_name ) {
       this.setState({redirectToUserProfessionDataView: true});
@@ -26,7 +31,7 @@ class Name extends Component {
   render() {
 
     if (this.state.redirectToUserProfessionDataView) {
-      return (<Redirect to={{ pathname: '/registration/professions', state: { first_name: this.state.first_name, last_name: this.state.last_name } }} />)
+      return (<Redirect to={{ pathname: '/registration/professions', state: { first_name: this.state.first_name, last_name: this.state.last_name, email: this.state.email } }} />)
     }
 
     return (

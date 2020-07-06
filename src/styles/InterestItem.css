@@ -1,0 +1,19 @@
+.interest-button {
+  margin-bottom: 4px;
+  margin-right: 4px;
+  border-width: 1px;
+  border-style: solid;
+  overflow: hidden;
+}
+
+.is-selected, .is-selected:focus {
+  color: #FFF !important;
+  background-color: #D85531 !important;
+  border-color: #D85531 !important;
+}
+
+.is-not-selected, .is-not-selected:hover {
+  color: #D85531 !important;
+  background-color: #FFF !important;
+  border-color: #D85531 !important;
+}

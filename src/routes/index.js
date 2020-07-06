@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Landing from '../components/Landing';
 import Name from '../components/signup/Name';
 import Professions from '../components/signup/Professions';
+import GeneralInfo from '../components/signup/GeneralInfo';
 // import SignIn from '../views/SignIn';
 // import AdminSignIn from '../views/AdminSignIn';
 // import AdminDashboard from '../components/AdminDashboard';
@@ -20,6 +21,7 @@ const createRoutes = (props) => {
         <Route exact path="/" component={Landing}/>
         <Route path="/registration/name" component={Name}/>
         <Route path="/registration/professions" component={Professions}/>
+        <Route path="/registration/general" component={GeneralInfo}/>
       </Switch>
     </BrowserRouter>
   );
