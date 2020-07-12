@@ -8,20 +8,28 @@ class InterestItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isInterestSelected: false
+      isInterestClicked: false,
+      variable: false
+    }
+  }
+
+  componentDidMount() {
+    const isSelected = this.props.isSelected;
+    if (isSelected) {
+      this.setState({ isInterestClicked: isSelected })
     }
   }
 
   handleInterestClicked(interest) {
-    this.setState({ isInterestSelected: !this.state.isInterestSelected })
-    console.log(interest.name + " is selected?: " + this.state.isInterestSelected);
+    this.setState({ isInterestClicked: !this.state.isInterestClicked })
     this.props.onInterestClicked(interest);
   }
 
   render() {
-    const {isInterestSelected} = this.state;
+    const {isInterestClicked} = this.state;
     return (
-      <button class={`interest-button ${isInterestSelected ? 'is-selected' : 'is-not-selected'}`} onClick={() => this.handleInterestClicked(this.props.data)}>{this.props.data.name}</button>
+      <button class={`interest-button ${isInterestClicked ? 'is-selected' : 'is-not-selected'}`} onClick={() => this.handleInterestClicked(this.props.data)}>{this.props.data.name}</button>
+
     );
   }
 }
