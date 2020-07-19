@@ -8,8 +8,7 @@ class InterestItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isInterestClicked: false,
-      variable: false
+      isInterestClicked: false
     }
   }
 
